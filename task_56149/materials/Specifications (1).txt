@@ -1,0 +1,22 @@
+
+1. Write a AXIS2 SOAP Java Web Service that performs a bidirectional currency conversion for the following currencies- GBP, EUR and USD (American Dollar).
+You are allowed to hardcode a static exchange rate in your web service. An example of one such bi-directional conversion is - 1 EUR = 1.29624 USD  and 1 USD = 0.771462 EUR
+
+2. Write a Java ADB client to perform the following- The client will read the contents of the file – invoice.txt.
+ The first line of the file will display the type of the currency. The client will then consume the web service written in step 1 to perform currency
+conversion and create similar files for the other 2 currencies. As an example if invoice file contains figures in GBP, client will produce two files – invoive_USD.txt and
+invoice_EUR.txt. Program should be able to detect this change and produce appropriate files when the currency is changed in the original file.
+
+3. Write a Java REST client to perform details provided in the step 2
+
+4. Modify both of the above clients (to write separate clients) to extract the exchange rate from a live web service that performs currency conversion. You can
+choose a Java or a .NET web service. The new REST client should also be able to produce both the plaintext and encrypted files.
+
+
+invoice.txt file details
+=============================
+Total revenue reported by the clients for the month of April 2013 in USD
+
+zxc,vbn,2401.10
+wqrc,vqt,2131.10
+abc,xyz,1230.10

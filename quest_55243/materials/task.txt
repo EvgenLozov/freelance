@@ -1,0 +1,5 @@
+Task:
+to write a program using the supplied Student Class and 3 enum 
+specifications. and to extend the Student Class and create the Undergraduate 
+and Graduate classes.
+more details in the attachment

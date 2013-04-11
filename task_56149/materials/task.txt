@@ -1,0 +1,9 @@
+Task:
+Help needed on the attached specifications to create a web service using 
+TOMCAT,AXIS2, REST Client
+
+Detailed explanations: required
+
+Specific requirements:
+Help needed on the attached specifications to create a web service using 
+TOMCAT,AXIS2, REST Client
