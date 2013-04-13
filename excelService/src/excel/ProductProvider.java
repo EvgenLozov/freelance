@@ -1,6 +1,5 @@
 package excel;
 
-import com.flashshop.Product;
 
 /**
  * Created with IntelliJ IDEA.

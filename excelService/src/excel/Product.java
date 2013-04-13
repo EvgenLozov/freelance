@@ -1,4 +1,4 @@
-package com.flashshop;
+package excel;
 
 /**
  * Created with IntelliJ IDEA.

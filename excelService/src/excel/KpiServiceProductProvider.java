@@ -1,6 +1,5 @@
 package excel;
 
-import com.flashshop.Product;
 import jxl.read.biff.BiffException;
 
 import java.io.IOException;

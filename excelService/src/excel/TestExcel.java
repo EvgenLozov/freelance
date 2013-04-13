@@ -1,6 +1,5 @@
 package excel;
 
-import com.flashshop.Product;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
