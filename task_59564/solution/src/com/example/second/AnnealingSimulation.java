@@ -58,7 +58,7 @@ abstract class AnnealingSimulation{
 
     protected abstract double nextState(double state, double temperature);
 
-    protected abstract double cooling(double temperature);
+    protected abstract double cooling(int iteration);
 
     protected abstract double probability(double currentStateEnergy, double nextStateEnergy, double temperature);
 
