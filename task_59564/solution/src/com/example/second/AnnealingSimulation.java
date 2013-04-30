@@ -7,6 +7,8 @@ abstract class AnnealingSimulation{
     private double minimalTemperature = 0.1;
     private int maxIteration = Integer.MAX_VALUE;
 
+    public double startingTemperature;
+
     protected AnnealingSimulation(SingleVariableFunction function) {
         this.function = function;
     }
@@ -60,9 +62,17 @@ abstract class AnnealingSimulation{
         this.function = function;
     }
 
+    public double getStartingTemperature() {
+        return startingTemperature;
+    }
+
+    public void setStartingTemperature(double startingTemperature) {
+        this.startingTemperature = startingTemperature;
+    }
+
     protected abstract double nextState(double state, double temperature);
 
-    protected abstract double cooling(double temperature);
+    protected abstract double cooling(int iteration);
 
     protected abstract double initState();
 
