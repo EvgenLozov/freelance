@@ -29,7 +29,7 @@ abstract class AnnealingSimulation{
                 currentState = nextState;
 
             temperature = cooling(iteration++);
-        }while ( temperature > minimalTemperature && iteration < maxIteration );
+        }while ( temperature > minimalTemperature|| iteration < maxIteration );
 
         return currentState;
     }
