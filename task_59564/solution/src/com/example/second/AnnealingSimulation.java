@@ -33,7 +33,7 @@ abstract class AnnealingSimulation{
     }
 
     public double probability(double currentStateEnergy, double nextStateEnergy, double temperature) {
-        return (nextStateEnergy-currentStateEnergy)/temperature;
+        return 1+(1+Math.exp((nextStateEnergy-currentStateEnergy)/temperature));
     }
 
     public double getMinimalTemperature() {
