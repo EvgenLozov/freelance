@@ -9,7 +9,7 @@ public class BoltzmannAnnealingSimulation extends AnnealingSimulation {
 
     @Override
     protected double nextState(double state, double temperature) {
-        return 0;
+        return normalRandom(state,temperature);
     }
 
     @Override
