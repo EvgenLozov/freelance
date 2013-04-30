@@ -22,7 +22,7 @@ public class BoltzmannAnnealingSimulation extends AnnealingSimulation {
         return 0;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    private double normrnd(double mean, double standardDeviation){
+    private double normalRandom( double mean, double standardDeviation ){
         double value = 0;
         for (int i=0; i<12; i++){
             value += Math.random();
