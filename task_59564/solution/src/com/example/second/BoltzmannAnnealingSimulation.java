@@ -19,7 +19,7 @@ public class BoltzmannAnnealingSimulation extends AnnealingSimulation {
 
     @Override
     protected double initState() {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return normalRandom(0, startingTemperature);
     }
 
     private double normalRandom( double mean, double standardDeviation ){
