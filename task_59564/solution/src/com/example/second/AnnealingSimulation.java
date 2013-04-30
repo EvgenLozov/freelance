@@ -32,6 +32,10 @@ abstract class AnnealingSimulation{
         return currentState;
     }
 
+    public double probability(double currentStateEnergy, double nextStateEnergy, double temperature) {
+        return (nextStateEnergy-currentStateEnergy)/temperature;
+    }
+
     public double getMinimalTemperature() {
         return minimalTemperature;
     }
@@ -59,8 +63,6 @@ abstract class AnnealingSimulation{
     protected abstract double nextState(double state, double temperature);
 
     protected abstract double cooling(double temperature);
-
-    protected abstract double probability(double currentStateEnergy, double nextStateEnergy, double temperature);
 
     protected abstract double initState();
 
