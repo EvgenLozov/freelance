@@ -10,9 +10,11 @@ public class PolynomialFunction implements SingleVariableFunction {
     @Override
     public double evaluate(double argument) {
         double value = 0;
+        int exponent = 0;
 
-        for (int i = 0; i<coefficients.size()-1; i++){
-            value += coefficients.get(i)*Math.pow(argument,i);
+        for (double coefficient: coefficients){
+            value += coefficient*Math.pow(argument,exponent);
+            exponent++;
         }
 
         return value;
