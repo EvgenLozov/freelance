@@ -1,4 +1,4 @@
-package com.example.second;
+package com.example;
 
 abstract class AnnealingSimulation{
 

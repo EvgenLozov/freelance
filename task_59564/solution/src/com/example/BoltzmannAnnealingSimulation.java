@@ -1,4 +1,4 @@
-package com.example.second;
+package com.example;
 
 
 public class BoltzmannAnnealingSimulation extends AnnealingSimulation {
