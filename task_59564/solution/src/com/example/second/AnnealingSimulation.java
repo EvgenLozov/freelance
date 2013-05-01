@@ -26,7 +26,6 @@ abstract class AnnealingSimulation{
 
             if(Math.random() < probability(currentStateEnergy, nextStateEnergy, temperature)){
                 currentState = nextState;
-                System.out.println(currentState);
             }
 
             temperature = cooling(iteration++);

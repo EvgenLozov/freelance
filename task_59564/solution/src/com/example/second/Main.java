@@ -1,29 +1,29 @@
 package com.example.second;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Main {
+    private static Scanner in = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        System.out.print("Enter name for input file: ");
+        String inputFileName = in.nextLine();
+
+        Scanner in = new Scanner((new File(inputFileName)));
+
         PolynomialFunction polynomialFunction = new PolynomialFunction();
 
-        ArrayList<Double> coefficients = new ArrayList<Double>();
-        coefficients.add(-9.0);
-        coefficients.add(15.3);
-        coefficients.add(1.3);
-        coefficients.add(13.8);
-        coefficients.add(7.6);
-        coefficients.add(-1.5);
-        coefficients.add(0.1);
-        polynomialFunction.setCoefficients(coefficients);
+        String[] coefficients = in.nextLine().split(" ");
+        for (int i=0; i<coefficients.length; i++){
+           polynomialFunction.setNextCoefficient(Double.parseDouble(coefficients[i]));
+        }
 
         BoltzmannAnnealingSimulation simulation = new BoltzmannAnnealingSimulation(polynomialFunction);
-        simulation.setMaxIteration( 1000000 );
-        simulation.setStartingTemperature( 100 );
+        simulation.setMaxIteration( Integer.parseInt(in.nextLine()) );
+        simulation.setStartingTemperature( 1 );
 
-
-        double decision = simulation.search();
-
-        System.out.println(decision);
+        System.out.println("The optimum solution: "+simulation.search());
     }
 }

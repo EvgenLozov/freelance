@@ -27,4 +27,8 @@ public class PolynomialFunction implements SingleVariableFunction {
     public void setCoefficients(List<Double> coefficients) {
         this.coefficients = coefficients;
     }
+
+    public void setNextCoefficient(double coefficient){
+        coefficients.add(coefficient);
+    }
 }
