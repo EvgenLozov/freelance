@@ -5,13 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner in = new Scanner(System.in);
-
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.print("Enter name for input file: ");
-        String inputFileName = in.nextLine();
-
-        Scanner in = new Scanner((new File(inputFileName)));
+        Scanner in = new Scanner((new File(args[0])));
 
         PolynomialFunction polynomialFunction = new PolynomialFunction();
 
