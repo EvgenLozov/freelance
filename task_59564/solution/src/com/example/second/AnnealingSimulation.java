@@ -5,7 +5,7 @@ abstract class AnnealingSimulation{
     private SingleVariableFunction function;
 
     private double minimalTemperature = 0.1;
-    private int maxIteration = Integer.MAX_VALUE;
+    private int maxIteration = 10000;
 
     public double startingTemperature = 1000;
 
