@@ -14,7 +14,6 @@ abstract class AnnealingSimulation{
     }
 
     public double search(){
-        //init state
         double currentState = initState();
         int iteration = 0;
         double temperature = cooling(iteration++);
@@ -25,17 +24,19 @@ abstract class AnnealingSimulation{
             double currentStateEnergy = function.evaluate(currentState);
             double nextStateEnergy = function.evaluate(nextState);
 
-            if(Math.random() > probability(currentStateEnergy, nextStateEnergy, temperature))
+            if(Math.random() < probability(currentStateEnergy, nextStateEnergy, temperature)){
                 currentState = nextState;
+                System.out.println(currentState);
+            }
 
             temperature = cooling(iteration++);
-        }while ( temperature > minimalTemperature|| iteration < maxIteration );
+        }while ( temperature > minimalTemperature && iteration < maxIteration );
 
         return currentState;
     }
 
-    public double probability(double currentStateEnergy, double nextStateEnergy, double temperature) {
-        return 1+(1+Math.exp((nextStateEnergy-currentStateEnergy)/temperature));
+    private double probability(double currentStateEnergy, double nextStateEnergy, double temperature) {
+        return 1/(1+Math.exp((nextStateEnergy-currentStateEnergy)/temperature));
     }
 
     public double getMinimalTemperature() {
