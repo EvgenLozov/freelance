@@ -1,0 +1,148 @@
+Task:
+Introduction:
+
+
+
+As a competent programmer, your understanding of control structures, 
+your ability to design and develop algorithms, and your proficient use 
+of data structures will help you design and develop applications to meet 
+customer requirements. You will need to develop a Java application to 
+meet the requirements of this assignment. It is recommended that you use 
+NetBeans (see web link below for download) to develop this.
+
+You will use the following scenario to complete the task:
+
+Your client is a real estate office manager who needs to run reports on 
+property listings. You will build two applications that will provide two 
+different reports. One report is focused on the amount of property an 
+agent is selling. The other report provides an overview of the types of 
+property for sale.
+
+Your listings file will contain property number, property type, price, 
+and agent id.
+
+Task:
+
+Note: You will submit all .java and .class files in one zipped folder. 
+If you developed this application using NetBeans, it is recommended that 
+you zip and submit the entire NetBeans project folder.
+
+
+
+
+A. Develop an application that reads your listings.txt file, analyzes 
+the property listed per agent, and outputs a report to an 
+agentreport.txt file. Your application should do the following:
+
+1. Prompt the user for the name of the input file (listings.txt).
+
+2. Open listings.txt file and read in property listings.
+
+3. Store each property type into a Set.
+
+a. Convert property type to upper case before adding to your Set using 
+method(s) from String class.
+
+b. Sort your Set of property types alphabetically.
+
+4. Use a Map to calculate total property listed in dollars and cents for 
+each agent id.
+
+
+
+
+Note: Agent id would be the key, and accumulated total of property 
+listed would be the value.
+
+
+
+
+• Sort your Map by agent id.
+
+• Create an agentreport.txt file.
+
+5. Use an Iterator to iterate through your Set and write your sorted set 
+of property types sold by the agents to the agentreport.txt file.
+
+6. Iterate through your Map to write your sorted pair of agent id and 
+total property listed to the agentreport.txt file.
+
+
+
+
+
+B. Develop an application that reads your listings.txt file, analyzes 
+the properties listed, and outputs an overview of properties listed to 
+an overview.txt file. Your application should do the following:
+
+1. Prompt the user for the name of the input file (listings.txt).
+
+2. Open the listings.txt file and read in property listing information 
+using a buffered FileReader.
+
+3. Count the total number of property listings for sale.
+
+• Use buffered FileWriter to write the count of the number of property 
+listings to your overview.txt file.
+
+4. Calculate the total value of property for sale.
+
+• Use a buffered FileWriter to write the total value of properties 
+currently for sale.
+
+5. Store each property id into an ArrayList.
+
+a. Sort the ArrayList of property ids using natural ordering.
+
+b. Use a for-each loop to iterate through the sorted ArrayList and write 
+property ids to overview.txt file using buffered FileWriter.
+
+6. Use buffered FileWriter to write the total value of the properties 
+listed and the total number of properties currently for sale.
+
+
+
+
+
+Note: For examples, see the document “Example Files” attached below.
+
+
+
+
+
+C. If you use sources, include all in-text citations and references in 
+APA format.
+
+
+
+
+
+Note: Please save word-processing documents as *.rtf (Rich Text Format) 
+or *.pdf (Portable Document Format) files.
+
+
+
+Note: When bulleted points are present in the task prompt, the level of 
+detail or support called for in the rubric refers to those bulleted points.
+
+
+Note: For definitions of terms commonly used in the rubric, see the 
+Rubric Terms web link included in the Evaluation Procedures section.
+
+
+
+
+Note: When using sources to support ideas and elements in a paper or 
+project, the submission MUST include APA formatted in-text citations 
+with a corresponding reference list for any direct quotes or 
+paraphrasing. It is not necessary to list sources that were consulted if 
+they have not been quoted or paraphrased in the text of the paper or 
+project.
+
+Note: No more than a combined total of 30% of a submission can be 
+directly quoted or closely paraphrased from sources, even if cited 
+correctly. For tips on using APA style, please refer to the APA Handout 
+web link included in the General Instructions section.
+
+
+Please see attachment for sample files.
