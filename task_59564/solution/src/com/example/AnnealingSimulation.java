@@ -2,12 +2,11 @@ package com.example;
 
 abstract class AnnealingSimulation{
 
-    private SingleVariableFunction function;
+    private SingleVariableFunction function; //1-dimensional energy function,
 
-    private double minimalTemperature = 0.1;
-    private int maxIteration = 10000;
+    private int maxIteration = 10000;  // default max iteration
 
-    public double startingTemperature = 1000;
+    public double startingTemperature = 1000; //
 
     protected AnnealingSimulation(SingleVariableFunction function) {
         this.function = function;
@@ -15,7 +14,7 @@ abstract class AnnealingSimulation{
 
     public double search(){
         double currentState = initState();
-        int iteration = 0;
+        int iteration = 1;
         double temperature = cooling(iteration++);
 
         do {
@@ -29,21 +28,13 @@ abstract class AnnealingSimulation{
             }
 
             temperature = cooling(iteration++);
-        }while ( temperature > minimalTemperature && iteration < maxIteration );
+        }while ( iteration < maxIteration );
 
         return currentState;
     }
 
     private double probability(double currentStateEnergy, double nextStateEnergy, double temperature) {
         return 1/(1+Math.exp((nextStateEnergy-currentStateEnergy)/temperature));
-    }
-
-    public double getMinimalTemperature() {
-        return minimalTemperature;
-    }
-
-    public void setMinimalTemperature(double minimalTemperature) {
-        this.minimalTemperature = minimalTemperature;
     }
 
     public int getMaxIteration() {
@@ -70,10 +61,13 @@ abstract class AnnealingSimulation{
         this.startingTemperature = startingTemperature;
     }
 
+    //transition
     protected abstract double nextState(double state, double temperature);
 
+    //the cooling schedule
     protected abstract double cooling(int iteration);
 
+    // generate initial point
     protected abstract double initState();
 
 }

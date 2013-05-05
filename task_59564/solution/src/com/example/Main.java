@@ -15,9 +15,9 @@ public class Main {
            polynomialFunction.setNextCoefficient(Double.parseDouble(coefficients[i]));
         }
 
-        BoltzmannAnnealingSimulation simulation = new BoltzmannAnnealingSimulation(polynomialFunction);
+        AnnealingSimulation simulation = new CauchyAnnealing(polynomialFunction);
         simulation.setMaxIteration( Integer.parseInt(in.nextLine()) );
-        simulation.setStartingTemperature( 1 );
+        simulation.setStartingTemperature( 1000 );
 
         System.out.println("The optimum solution: "+simulation.search());
     }

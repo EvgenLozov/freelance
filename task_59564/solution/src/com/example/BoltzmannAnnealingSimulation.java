@@ -14,7 +14,7 @@ public class BoltzmannAnnealingSimulation extends AnnealingSimulation {
 
     @Override
     protected double cooling(int iteration) {
-        return startingTemperature/Math.log(2+iteration);
+        return startingTemperature/Math.log(1+iteration);
     }
 
     @Override
