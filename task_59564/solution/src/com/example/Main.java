@@ -19,6 +19,6 @@ public class Main {
         simulation.setMaxIteration( Integer.parseInt(in.nextLine()) );
         simulation.setStartingTemperature( 1000 );
 
-        System.out.println("The optimum solution: "+simulation.search());
+        System.out.println("The solution found is equal to "+simulation.search());
     }
 }

@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ReportProviderB {
+    private static final int PROPERTY_ID = 0;
+    private static final int PRICE = 2;
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        System.out.print("Enter name for input file: ");
+        System.out.println("Enter file name:");
         String inputFileName = in.nextLine();
 
         FileReader fileReader = new FileReader(inputFileName);
@@ -16,13 +18,14 @@ public class ReportProviderB {
 
         int totalNumberOfProperty = 0;
         double totalPropertyValue = 0;
-        ArrayList<Integer> propertyIds = new ArrayList<Integer>();
+        ArrayList<String> propertyIds = new ArrayList<String>();
 
         String line;
         while ((line = bufferedReader.readLine())!= null){
+            String[] words = line.split(" +");
             totalNumberOfProperty++;
-            totalPropertyValue += Double.parseDouble(getWord(line, 2));
-            propertyIds.add(Integer.parseInt(getWord(line, 0)));
+            totalPropertyValue += Double.parseDouble(words[PRICE]);
+            propertyIds.add( words[PROPERTY_ID] );
         }
 
         bufferedReader.close();
@@ -30,28 +33,19 @@ public class ReportProviderB {
         FileWriter fileWriter = new FileWriter("overview.txt");
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-        bufferedWriter.write("Total properties listed: "+totalNumberOfProperty+"\n");
-        bufferedWriter.write("Total value of properties listed: "+totalPropertyValue+"\n\n");
+        try {
+            bufferedWriter.write("Total properties listed: "+totalNumberOfProperty+"\n");
+            bufferedWriter.write("Total value of properties listed: "+totalPropertyValue+"\n\n");
 
-        for (Integer propertyId: propertyIds){
-            bufferedWriter.write(propertyId+"\n");
+            for (String propertyId: propertyIds){
+                bufferedWriter.write(propertyId+"\n");
+            }
+        } finally {
+            bufferedWriter.close();
         }
-
-        bufferedWriter.close();
     }
 
     private static String getWord(String line,int numberOfWord){
-        String[] words = line.split(" ");
-        int positionWord = -1;
-        for (int i=0; i<words.length; i++){
-            if (!words[i].equals("")){
-                positionWord++;
-                if (positionWord == numberOfWord){
-                    return words[i];
-                }
-            }
-        }
-
-        return "";
+        return line.split(" +")[numberOfWord];
     }
 }
